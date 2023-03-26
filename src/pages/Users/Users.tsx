@@ -17,7 +17,7 @@ const TOTALPAGES = 10
 
 const Users = () => {
   const dispatch = useAppDispatch()
-  const users1 = useAppSelector((state) => state.users)
+  const usersData = useAppSelector((state) => state.users)
 
   const queryString: { page?: number } = useQueryString()
   const page = Number(queryString.page) || 1
@@ -31,11 +31,11 @@ const Users = () => {
 
   const sortByFullName = () => {
     dispatch(sortFullName())
-    const usersCopy = [...users1.users]
+    const usersCopy = [...usersData.users]
     usersCopy.sort((userA, userB): any => {
       const fullNameA = `${userA['name']['first']}${userA['name']['last']}`
       const fullNameB = `${userB['name']['first']}${userB['name']['last']}`
-      if (users1.sort.sortReversed) {
+      if (usersData.sort.sortReversed) {
         return fullNameB.localeCompare(fullNameA)
       }
       return fullNameA.localeCompare(fullNameB)
@@ -45,11 +45,11 @@ const Users = () => {
 
   const sortByUserName = () => {
     dispatch(sortUserName())
-    const usersCopy = [...users1.users]
+    const usersCopy = [...usersData.users]
     usersCopy.sort((userA, userB): any => {
       const fullNameA = `${userA['login']['username']}}`
       const fullNameB = `${userB['login']['username']}}`
-      if (users1.sort.sortReversed) {
+      if (usersData.sort.sortReversed) {
         return fullNameB.localeCompare(fullNameA, undefined, {
           numeric: true,
           sensitivity: 'base'
@@ -64,7 +64,7 @@ const Users = () => {
   }
 
   const renderArrow = () => {
-    if (users1.sort.sortReversed) {
+    if (usersData.sort.sortReversed) {
       return <BsFillArrowUpSquareFill />
     }
     return <BsFillArrowDownSquareFill />
@@ -91,7 +91,7 @@ const Users = () => {
                     <div className='cursor-pointer flex justify-center align-center'>
                       <span className=' ml-10'>FullName</span>
                       <span className=' ml-10 mt-1.5'>
-                        {users1.sort.sortField === 'fullname' ? renderArrow() : null}
+                        {usersData.sort.sortField === 'fullname' ? renderArrow() : null}
                       </span>
                     </div>
                   </th>
@@ -99,7 +99,7 @@ const Users = () => {
                     <div className='cursor-pointer flex justify-center align-center'>
                       <span className=' ml-10'>UserName</span>
                       <span className=' ml-10 mt-1.5'>
-                        {users1.sort.sortField === 'username' ? renderArrow() : null}
+                        {usersData.sort.sortField === 'username' ? renderArrow() : null}
                       </span>
                     </div>
                   </th>
@@ -109,7 +109,7 @@ const Users = () => {
                 </tr>
               </thead>
               <tbody>
-                {users1?.users?.map((user: any) => (
+                {usersData?.users?.map((user: any) => (
                   <tr key={user.phone} className='border-b bg-white hover:bg-gray-50  '>
                     <th scope='row' className='whitespace-nowrap py-4 px-6 font-medium text-gray-900 '>
                       {`${user.name.title} ${user.name.first}${user.name.last}`}
