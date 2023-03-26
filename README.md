@@ -9,7 +9,7 @@ An application including some features:
 - Sorting on Username and
 Full Name
 
-- Display 10 users at a time with 100 uers in total
+- Display 10 users at a time with 100 users in total
 # Tech Stack
 
 This Project is built with React, Redux, Typescript and Tailwind CSS
