@@ -46,6 +46,13 @@ This project is built with React, Redux, Typescript and Tailwind CSS
 ![App Screenshot](https://github.com/Khoak/screenshots/blob/main/link.png?raw=true
 )
 
+- Sorting on Full Name and Username
+![Full Name](https://github.com/Khoak/screenshots/blob/main/sorting%20fullname.png?raw=true
+)
+
+![Username](https://github.com/Khoak/screenshots/blob/main/sorting%20username.png?raw=true
+)
+
 
 
 
