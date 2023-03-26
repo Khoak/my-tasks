@@ -1,0 +1,41 @@
+export interface User {
+  gender: string
+  title_name: string
+  first_name: string
+  last_name: string
+  street_number: number
+  street_name: string
+  city: string
+  state: string
+  country: string
+  postcode: number
+  latitude: number
+  longtitude: number
+  timezone_offset: string
+  timezone_description: string
+  email: string
+  uuid: string
+  username: string
+  password: string
+  salt: string
+  md5: string
+  sha1: string
+  sha256: string
+  dob_date: string
+  dob_age: number
+  registered_date: string
+  registered_age: number
+  phone: number
+  cell: number
+  id_name: string
+  id_value: string
+  picture_large: string
+  picture_medium: string
+  picture_thumbnail: string
+  nat: string
+  seed: string
+  results: number
+  page: number
+  version: number
+}
+export type UserType = User[]
